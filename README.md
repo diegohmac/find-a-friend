@@ -19,6 +19,6 @@ Bring happiness to your home. Find the ideal pet for your lifestyle!
 
 ## NFRs (Non-Functional Requirements)
 - [ ] It should encrypt the user password.
-- [ ] It should persist the data in a PostgresSQL database.
+- [x] It should persist the data in a PostgresSQL database.
 - [ ] It should paginate all GET endpoints with 20 items per page.
 - [ ] It should identify a user based on a JWT (JSON Web Token).
