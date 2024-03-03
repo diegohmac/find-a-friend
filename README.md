@@ -1,55 +1,24 @@
-# Typescript Node Template
+# Find a Friend API
+Bring happiness to your home. Find the ideal pet for your lifestyle!
 
-This template provides a starting point for building Node applications using TypeScript. It includes essential elements like:
+## FRs (Functional Requirements)
+- [ ] It must be possible to register a pet.
+- [ ] It must be possible to list all pets available for adoption in a city.
+- [ ] It must be possible to filter pets by their characteristics.
+- [ ] It must be possible to view details of a pet for adoption.
+- [ ] It must be possible to register as an organization (ORG).
+- [ ] It must be possible to log in as an organization (ORG).
 
-- **TypeScript configuration**: Set up for compiling and running TypeScript code.
-- **Linting and formatting**: Configured Biome to ensure code quality and consistency.
+## BRs (Business Rules)
+- [ ] To list pets, we must inform the city.
+- [ ] An organization (ORG) must have an address and a WhatsApp number.
+- [ ] A pet must be associated with an organization (ORG).
+- [ ] The user who wants to adopt will contact the organization (ORG) via WhatsApp.
+- [ ] All filters, besides the city, are optional.
+- [ ] For an organization (ORG) to access the application as an admin, they must be logged in.
 
-## Packages
-| Package | Description |
-| --- | --- |
-| `typescript` | For type safe JS applications.
-| `@types/node` |  Type definitions for Node core modules and enables seamless integration of TS with Node applications.
-| `tsx` | CLI command for running TS and ESM in both `commonjs` and `module` package types.
-| `tsup` | Bundle TS with no config.
-| `@biomejs/biome` | Format, lint, and more in a fraction of a second.
-| `dotenv` | Loads environment variables.
-| `zod` | TypeScript-first schema validation with static type inference
-
-## Setup
-
-### Biome
-Install the VsCode Biome extension and you can either run `npx @biomejs/biome init` to create a `biome.json` config file or you can copy paste my custom config:
-
-biome.json
-```json
-{
-  "$schema": "https://biomejs.dev/schemas/1.5.3/schema.json",
-  "organizeImports": {
-    "enabled": true
-  },
-  "files": {
-    "ignore": ["dist/*", "build/*"]
-  },
-  "formatter": {
-    "indentStyle": "space",
-    "indentWidth": 2,
-    "lineWidth": 80
-  },
-  "javascript": {
-    "formatter": {
-      "quoteStyle": "single",
-      "trailingComma": "es5"
-    }
-  },
-  "linter": {
-    "enabled": true,
-    "rules": {
-      "recommended": true,
-      "correctness": {
-        "noUnusedVariables": "error"
-      }
-    }
-  }
-}
-```
+## NFRs (Non-Functional Requirements)
+- [ ] It should encrypt the user password.
+- [ ] It should persist the data in a PostgresSQL database.
+- [ ] It should paginate all GET endpoints with 20 items per page.
+- [ ] It should identify a user based on a JWT (JSON Web Token).
