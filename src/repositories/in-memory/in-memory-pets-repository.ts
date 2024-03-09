@@ -14,6 +14,12 @@ export class InMemoryPetsRepository implements PetsRepository {
     return pet;
   }
 
+  async list(city: string) {
+    return this.pets.filter(
+      (pet) => pet.city.toLowerCase() === city.toLowerCase()
+    );
+  }
+
   async create(data: Prisma.PetUncheckedCreateInput) {
     const images = Array.isArray(data?.images) ? data.images : [];
     const adoptionRequirements = Array.isArray(data?.adoptionRequirements)

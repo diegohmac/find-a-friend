@@ -21,6 +21,7 @@ describe('Register Pet Use Case', () => {
       independency: 'MEDIUM',
       environment: 'OUTDOOR',
       organizationId: 'org-id',
+      city: 'Lisbon',
     });
     expect(pet.id).toEqual(expect.any(String));
   });
