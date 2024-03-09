@@ -19,6 +19,7 @@ type ExecuteParams = {
   images?: string[];
   adoptionRequirements?: string[];
   organizationId: string;
+  city: string;
 };
 
 export class RegisterPetUseCase {
