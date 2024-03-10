@@ -1,4 +1,5 @@
 import { Prisma } from '@prisma/client';
+
 import { OrganizationsRepository } from '../organizations-repository';
 import { prisma } from '@/lib/prisma';
 
