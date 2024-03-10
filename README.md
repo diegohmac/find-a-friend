@@ -4,7 +4,7 @@ Bring happiness to your home. Find the ideal pet for your lifestyle!
 ## FRs (Functional Requirements)
 - [x] It must be possible to register a pet.
 - [x] It must be possible to list all pets available for adoption in a city.
-- [ ] It must be possible to filter pets by their characteristics.
+- [x] It must be possible to filter pets by their characteristics.
 - [ ] It must be possible to view details of a pet for adoption.
 - [x] It must be possible to register as an organization (ORG).
 - [x] It must be possible to log in as an organization (ORG).
@@ -14,7 +14,7 @@ Bring happiness to your home. Find the ideal pet for your lifestyle!
 - [x] An organization (ORG) must have an address and a WhatsApp number.
 - [x] A pet must be associated with an organization (ORG).
 - [ ] The user who wants to adopt will contact the organization (ORG) via WhatsApp.
-- [ ] All filters, besides the city, are optional.
+- [x] All filters, besides the city, are optional.
 - [ ] For an organization (ORG) to access the application as an admin, they must be logged in.
 
 ## NFRs (Non-Functional Requirements)
