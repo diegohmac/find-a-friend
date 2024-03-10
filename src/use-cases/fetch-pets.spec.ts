@@ -28,9 +28,12 @@ describe('Fetch Pets Use Case', () => {
       city: 'Lisbon',
     });
 
-    const { pets } = await useCase.execute({
-      city: 'Lisbon',
-    });
+    const { pets } = await useCase.execute(
+      {
+        city: 'Lisbon',
+      },
+      1
+    );
 
     expect(pets).toHaveLength(1);
     expect(pets).toEqual(
@@ -54,7 +57,9 @@ describe('Fetch Pets Use Case', () => {
       city: 'Lisbon',
     });
 
-    await expect(useCase.execute({ city: '' })).rejects.toBeInstanceOf(Error);
+    await expect(useCase.execute({ city: '' }, 1)).rejects.toBeInstanceOf(
+      Error
+    );
   });
 
   it('should be able to filter pets by age', async () => {
@@ -89,10 +94,13 @@ describe('Fetch Pets Use Case', () => {
       }
     );
 
-    const { pets } = await useCase.execute({
-      city: 'Lisbon',
-      age: 'ADULT',
-    });
+    const { pets } = await useCase.execute(
+      {
+        city: 'Lisbon',
+        age: 'ADULT',
+      },
+      1
+    );
 
     expect(pets).toHaveLength(1);
     expect(pets).toEqual(
@@ -132,10 +140,13 @@ describe('Fetch Pets Use Case', () => {
       }
     );
 
-    const { pets } = await useCase.execute({
-      city: 'Lisbon',
-      size: 'SMALL',
-    });
+    const { pets } = await useCase.execute(
+      {
+        city: 'Lisbon',
+        size: 'SMALL',
+      },
+      1
+    );
 
     expect(pets).toHaveLength(1);
     expect(pets).toEqual(
@@ -175,10 +186,13 @@ describe('Fetch Pets Use Case', () => {
       }
     );
 
-    const { pets } = await useCase.execute({
-      city: 'Lisbon',
-      energy: 'HIGH',
-    });
+    const { pets } = await useCase.execute(
+      {
+        city: 'Lisbon',
+        energy: 'HIGH',
+      },
+      1
+    );
 
     expect(pets).toHaveLength(1);
     expect(pets).toEqual(
@@ -218,10 +232,13 @@ describe('Fetch Pets Use Case', () => {
       }
     );
 
-    const { pets } = await useCase.execute({
-      city: 'Lisbon',
-      independency: 'LOW',
-    });
+    const { pets } = await useCase.execute(
+      {
+        city: 'Lisbon',
+        independency: 'LOW',
+      },
+      1
+    );
 
     expect(pets).toHaveLength(1);
     expect(pets).toEqual(
@@ -261,10 +278,13 @@ describe('Fetch Pets Use Case', () => {
       }
     );
 
-    const { pets } = await useCase.execute({
-      city: 'Lisbon',
-      environment: 'BOTH',
-    });
+    const { pets } = await useCase.execute(
+      {
+        city: 'Lisbon',
+        environment: 'BOTH',
+      },
+      1
+    );
 
     expect(pets).toHaveLength(1);
     expect(pets).toEqual(

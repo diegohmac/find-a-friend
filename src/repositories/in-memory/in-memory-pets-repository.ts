@@ -14,30 +14,32 @@ export class InMemoryPetsRepository implements PetsRepository {
     return pet;
   }
 
-  async list(filterOptions: PetsFilterOptions) {
+  async list(filterOptions: PetsFilterOptions, page: number) {
     const { city, age, energy, environment, independency, size } =
       filterOptions;
-    return this.pets.filter((pet) => {
-      if (city && pet.city !== city) {
-        return false;
-      }
-      if (age && pet.age !== age) {
-        return false;
-      }
-      if (energy && pet.energy !== energy) {
-        return false;
-      }
-      if (environment && pet.environment !== environment) {
-        return false;
-      }
-      if (independency && pet.independency !== independency) {
-        return false;
-      }
-      if (size && pet.size !== size) {
-        return false;
-      }
-      return true;
-    });
+    return this.pets
+      .filter((pet) => {
+        if (city && pet.city !== city) {
+          return false;
+        }
+        if (age && pet.age !== age) {
+          return false;
+        }
+        if (energy && pet.energy !== energy) {
+          return false;
+        }
+        if (environment && pet.environment !== environment) {
+          return false;
+        }
+        if (independency && pet.independency !== independency) {
+          return false;
+        }
+        if (size && pet.size !== size) {
+          return false;
+        }
+        return true;
+      })
+      .slice((page - 1) * 20, page * 20);
   }
 
   async create(data: Prisma.PetUncheckedCreateInput) {

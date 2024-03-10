@@ -19,12 +19,12 @@ type FetchPetsParams = {
 export class FetchPetsUseCase {
   constructor(private petsRepository: PetsRepository) {}
 
-  async execute(filterOptions: FetchPetsParams) {
+  async execute(filterOptions: FetchPetsParams, page: number) {
     if (!filterOptions.city) {
       throw new Error('City is required');
     }
 
-    const pets = await this.petsRepository.list(filterOptions);
+    const pets = await this.petsRepository.list(filterOptions, page);
 
     return {
       pets,
