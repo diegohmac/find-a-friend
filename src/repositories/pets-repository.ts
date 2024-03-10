@@ -19,5 +19,5 @@ export type PetsFilterOptions = {
 export interface PetsRepository {
   findById(id: string): Promise<Pet | null>;
   create(data: Prisma.PetUncheckedCreateInput): Promise<Pet>;
-  list(filter: PetsFilterOptions): Promise<Pet[]>;
+  list(filter: PetsFilterOptions, page: number): Promise<Pet[]>;
 }
